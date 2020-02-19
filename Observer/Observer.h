@@ -1,9 +1,10 @@
 #pragma once
 
+class Subject;
 class Observer
 {
 public:
-	virtual void Update(std::string strMessage) = 0;
+	virtual void Update(Subject* pSubject) = 0;
 	virtual ~Observer(void) {};
 };
 

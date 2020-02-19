@@ -19,15 +19,19 @@ public:
 		m_lstObserver.remove(observer);
 	}
 	
-	void Notify(std::string strMessage)
+	void Notify()
 	{
 		std::list<Observer*>::iterator iter = m_lstObserver.begin();
 		while (iter != m_lstObserver.end())
 		{
-			(*iter)->Update(strMessage);
+			(*iter)->Update(this);
 			iter++;
 		}
 	}
+
+public:
+	virtual std::string GetLog() = 0;
+	virtual void SetLog(std::string strLog) = 0;
 
 private:
 	std::list<Observer*> m_lstObserver;

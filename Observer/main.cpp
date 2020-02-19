@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <string>
 
 #include "Subject.h"
 #include "Observer.h"
@@ -9,9 +10,9 @@
 class ConsoleObserver : public Observer
 {
 public:
-	virtual void Update(std::string strMessage)
+	virtual void Update(Subject* pSubject)
 	{
-		std::cout << strMessage <<std::endl;
+		std::cout << pSubject->GetLog() << std::endl;
 	}
 };
 
@@ -22,9 +23,9 @@ public:
 		m_logger.open(strFile);
 	}
 
-	virtual void Update(std::string strMessage)
+	virtual void Update(Subject* pSubject)
 	{
-		m_logger << strMessage << std::endl;
+		m_logger << pSubject->GetLog() << std::endl;
 	}
 
 	~LogObserver()
@@ -46,9 +47,24 @@ public:
 		{
 			std::stringstream ss;	
 			ss << "handling " << i + 1 << " of 4";
-			Notify(ss.str());
+			
+			SetLog(ss.str());
 		}
 	}
+
+	virtual std::string GetLog()
+	{
+		return m_strLog;
+	}
+
+	virtual void SetLog(std::string strLog)
+	{
+		m_strLog = strLog;
+		Notify();
+	}
+private:
+	std::string m_strLog;
+
 };
 
 void main()
