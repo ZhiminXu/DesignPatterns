@@ -7,7 +7,7 @@ class Person;
 class Mediator
 {
 public:
-    virtual void Send(Person* person, const std::string& message) = 0;
+    virtual void Send(Person* personFrom, const std::string& message) = 0;
 	virtual void AddRenter(Person* renter) = 0;
 	virtual void AddLandlord(Person* landlord) = 0;
 
@@ -23,7 +23,7 @@ public:
 	virtual void AddLandlord(Person* landlord);
 
 
-	virtual void Send(Person* person, const std::string& message);
+	virtual void Send(Person* personFrom, const std::string& message);
 
 private:
 	std::list<Person*> pListRenter;

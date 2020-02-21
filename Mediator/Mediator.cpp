@@ -34,9 +34,9 @@ void HouseMediator::AddLandlord(Person* landlord)
 		pListLandlord.push_back(landlord);
 }
 
-void HouseMediator::Send(Person* person, const std::string& message)
+void HouseMediator::Send(Person* personFrom, const std::string& message)
 {
-	if (Person::Type_Renter == person->GetType())
+	if (Person::Type_Renter == personFrom->GetType())
 	{
 		auto iter = pListLandlord.begin();
 		while (iter != pListLandlord.end()) {

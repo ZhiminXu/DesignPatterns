@@ -3,9 +3,11 @@
 
 typedef std::string State;
 
+class Originator;
 class Memento
 {
-public:
+	friend class Originator;
+protected:
 	Memento(State state) : mState(state) {}
 	State GetState()
 	{
