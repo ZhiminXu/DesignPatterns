@@ -18,7 +18,7 @@
 ## 行为型模式(Behavioral Pattern)
 行为型模式主要用于描述对类或对象怎样交互和怎样分配职责，即关注它们之间的相互作用。
 - [职责链模式(Chain of Responsibility)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Chain%20of%20Responsibility)
-- 命令模式(Command)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Command)
+- [命令模式(Command)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Command)
 - [解释器模式(Interpreter)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Interpreter)
 - [迭代器模式(Iterator)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Iterator)
 - [中介者模式(Mediator)](https://github.com/ZhiminXu/DesignPatterns/tree/master/Mediator)
